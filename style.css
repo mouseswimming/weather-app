@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: hsl(200, 100%, 15%);
+  --light-dark-blue: hsl(200, 100%, 25%);
+  --blue-75: hsl(200, 60%, 75%);
+  --blue-85: hsl(200, 60%, 85%);
+  --light-blue: hsl(200, 100%, 95%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  background-color: var(--light-blue);
+  color: var(--dark-blue);
+  font-size: 16px;
+  padding: 1rem;
+  max-width: 640px;
+  margin: auto;
+}
+
+.blurred {
+  filter: blur(3px);
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  padding: 0.5rem;
+}
+
+.header-left {
+  display: flex;
+  column-gap: 1rem;
+  padding-right: 2rem;
+  border-right: 2px solid var(--dark-blue);
+  align-items: center;
+  height: 100%;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.weather-icon.large {
+  width: 80px;
+  height: 80px;
+}
+
+.header-current-temperature {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header-right {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+}
+
+.info-group {
+  display: grid;
+  justify-items: center;
+  font-size: 1.125rem;
+  row-gap: 0.25rem;
+}
+
+.info-group label {
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--light-dark-blue);
+}
+
+.info-group sub {
+  font-size: 0.65rem;
+}
+
+/* days section */
+
+.day-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--dark-blue);
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.day-card-day {
+  font-size: 0.75rem;
+  color: var(--dark-blue);
+}
+
+/* hour section */
+.hour-options {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.hour-section {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  margin-top: 0.5rem;
+}
+
+.hour-row {
+  background-color: var(--blue-75);
+}
+
+.hour-row:nth-child(2n) {
+  background-color: var(--blue-85);
+}
+
+.hour-row > td {
+  padding: 0.5rem;
+}
+
+.hidden {
+  display: none;
+}
